@@ -2,21 +2,22 @@ package main.java;
 
 public class Veerg {
 
-    public String veerg;
+    public String veeruKood;
            public String allikasVeerg;
-                 public   String allikasTabel;
+                 public   Tabel allikasTabel;
 
 
-    public Veerg(String veerg, String allikasVeerg, String allikasTabel) {
-        this.veerg = veerg;
+    public Veerg(String veeruKood, String allikasVeerg, Tabel allikasTabel) {
+        this.veeruKood = veeruKood;
         this.allikasVeerg = allikasVeerg;
         this.allikasTabel = allikasTabel;
     }
 
+
     @Override
     public String toString() {
         return "Veerg{" +
-                "veerg='" + veerg + '\'' +
+                "veeruKood='" + veeruKood + '\'' +
                 ", allikasVeerg='" + allikasVeerg + '\'' +
                 ", allikasTabel='" + allikasTabel + '\'' +
                 '}';

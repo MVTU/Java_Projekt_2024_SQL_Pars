@@ -12,6 +12,10 @@ public class Failid{
         this.failid = failid;
     }
 
+    /*
+    Loe dokumenti rea kaupa. Kui jõuad from-ini siis poolita select
+    Järgnevad versioonid võiksid saada hakkama ka subquerydega
+     */
     public Paring jaotaParing() {
         StringBuilder valjund = new StringBuilder();
         StringBuilder sisend = new StringBuilder() ;
@@ -21,6 +25,10 @@ public class Failid{
 
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
+                //Eemalda tühikud esimeselt realt, et oleks hiljem lihtsam selecti eemaldada
+                if (blokk.isEmpty()) {
+                    line = line.trim();
+                }
                 if (line.contains("FROM")) {
                     fromOlemas = true;
                 }

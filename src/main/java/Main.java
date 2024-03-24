@@ -6,6 +6,7 @@ public class Main{
         Failid Essa = new Failid("SELECT.sql");
         //ystem.out.println(Essa.jaotaParing().toString());
         System.out.println(Essa.jaotaParing().leiaVeerud().toString());
+        System.out.println(Essa.jaotaParing().leiaSisend().toString());
 
         //System.out.println(Essa.jaotaParing());
 
