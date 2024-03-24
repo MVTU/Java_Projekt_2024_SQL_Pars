@@ -15,7 +15,7 @@ TODO
 
 V 0.1
   - Hardcodetud sisendiga
-  - Praegune pakett loob klasse veerg mis näitavad siis lihtsalt iga tagastatava veeru koodi eraldi.
+  - Praegune pakett loob isendeid klassi Veerg mis näitavad siis lihtsalt iga tagastatava veeru koodi eraldi.
   - On olemas nimekiri tabelitest ja kasutatud aliastest, neid peab nüüd võrdlema veergudega ja välja tooma kasutatud tabelid igas veerus.
 
 
