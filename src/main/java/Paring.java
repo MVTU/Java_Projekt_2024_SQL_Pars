@@ -45,12 +45,14 @@ public class Paring {
                 } else if (koma.equals(String.valueOf(valjund.charAt(i))) && !suluInd) {
                     reaLõpp = i;
 
-                    // Eemalda select osa, eeldus on et valjund algab ilma tühikuteta
+                    // Eemalda select osa, eeldus on et sisseloetud valjund algab ilma tühikuteta
                     String[] selectTükk = valjund.substring(reaAlgus, reaLõpp).split("\\s+");
                     if (selekt.equalsIgnoreCase(selectTükk[0])) {
                         reaAlgus = reaAlgus + 6;
                     }
-                    veerud.add(new Veerg(valjund.substring(reaAlgus, reaLõpp), null, null));
+                    Veerg uusVeerg = new Veerg(valjund.substring(reaAlgus, reaLõpp));
+                    uusVeerg.leiaSisendTabel();
+                    veerud.add(uusVeerg);
                     reaAlgus = i;
                 }
 

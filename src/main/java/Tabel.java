@@ -12,8 +12,13 @@ public class Tabel {
                 '}';
     }
 
+
+
     public Tabel(String tabelNimi, String tabelAlias) {
         this.tabelNimi = tabelNimi;
         this.tabelAlias = tabelAlias;
     }
+
+
+
 }

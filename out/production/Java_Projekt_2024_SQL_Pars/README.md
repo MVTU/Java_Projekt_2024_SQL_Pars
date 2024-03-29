@@ -9,3 +9,11 @@ TODO
 3) Tabelite eristamine
 4) Kasutajalt sisendi küsimine (küsib näiteks faili nime või veergu?)
 5) Randomi kasutamine (tagasta suvaline veerg?)
+
+
+
+V 0.1
+  - Hardcodetud sisendiga
+  - Praegune pakett loob klasse veerg mis näitavad siis lihtsalt iga tagastatava veeru koodi eraldi.
+  - Edasi peaks neist siis välja võtma tabeli nimed ja andmebaasid, selleks on tarvis võtta kõik tabelid mis tulevad siis pärast märksõnu from või join. Peale tabelite nimesid on aliased mida saab siis meie praegusega klassiga siduda
+
