@@ -39,17 +39,17 @@ V 0.1
   - Näiteks \
   CASE WHEN o.orders_id then '1' \
   when o.order_type = 'A' then '2' \
-  else oi.order_inventory_type end 
+  else oi.order_inventory_type end AS Order_Mapped
   -  Võiks tagastada \
   Kasutatud tabelid ja veerud: \
   Orders , [orders_id, order_Type] \
   Order_Inventory, [order_inventory_type] 
 
 #### Tekita metadata csv fail:
-  Tabel Veerg Failinimi \
-  Order, orders_id , sel.sql \
-  Order, order_Type, sel.sql \
-  Order_Inventory , order_inventory_Type, sel.sql 
+  VäljundVeerg SisendTabel SisendVeerg Failinimi \
+  Order_Mapped Order, orders_id , sel.sql \
+  Order_Mapped ,Order, order_Type, sel.sql \
+  Order_Mapped, Order_Inventory , order_inventory_Type, sel.sql 
 
 
 
