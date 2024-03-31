@@ -39,8 +39,8 @@ V 0.1
 
 #### Tekita metadata csv fail:
   Tabel Veerg Failinimi \
-  Order, orders_id , sel.sql \ 
-  Order, order_Type, sel.sql \ 
+  Order, orders_id , sel.sql \
+  Order, order_Type, sel.sql \
   Order_Inventory , order_inventory_Type, sel.sql 
 
 
