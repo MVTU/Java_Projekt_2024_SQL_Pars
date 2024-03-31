@@ -1,3 +1,10 @@
+# Eesmärk
+
+Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
+Äriloogika muutumisel või tabelite struktuuride ümberkujundamisel on mõnel juhul aeganõudev töö suuremate SQL päringute lahtiharutamine. \
+Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
+
+
 TODO
 
 1) Veergude eristamine
