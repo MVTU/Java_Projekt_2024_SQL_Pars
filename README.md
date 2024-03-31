@@ -28,11 +28,11 @@ V 0.1
 ### Väljund:
 
  #### Prindi kõik tabelid ja veerud mida kasutati
-  - Näiteks
+  - Näiteks \
   CASE WHEN o.orders_id then '1' \
   when o.order_type = 'A' then '2' \
   else oi.order_inventory_type end 
-  -  Võiks tagastada 
+  -  Võiks tagastada \
   Kasutatud tabelid ja veerud: \
   Orders , [orders_id, order_Type] \
   Order_Inventory, [order_inventory_type] 
