@@ -5,7 +5,8 @@ Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise 
 Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
 
 
-TODO
+
+## Versioonid ja plaan
 
 1) Veergude eristamine
   -  Veerud on SELECT ja FROM-i vahel (Esimeses versioonis ei arvesta subselectiga enne FROM-e)  
@@ -18,13 +19,13 @@ TODO
 5) Randomi kasutamine (tagasta suvaline veerg?)
 
 
-
-
 V 0.1
   - Hardcodetud sisendiga
   - Praegune pakett loob isendeid klassi Veerg mis näitavad siis lihtsalt iga tagastatava veeru koodi eraldi.
   - On olemas nimekiri tabelitest ja kasutatud aliastest, neid peab nüüd võrdlema veergudega ja välja tooma kasutatud tabelid igas veerus.
 
+
+## Funktsionaalsuse kirjeldus 
 
 ### Sisend:
  - Veeru nimi ( sel 'a' , 'b' as c FROM dummy puhul saab mälu järgi esimene veerg nimeks a ja teise puhul c)
