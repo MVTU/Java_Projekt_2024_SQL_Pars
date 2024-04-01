@@ -52,4 +52,5 @@ public class Failid{
                 "failid='" + failid + '\'' +
                 '}';
     }
+
 }
