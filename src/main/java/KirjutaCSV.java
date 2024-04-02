@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KirjutaCSV {
 
-        public void kirjuta(String failiNimi, ArrayList<String> tabeliNimed,ArrayList<String> veeruiNimed){
+        public void kirjuta(List<String> väljundVeerg, ArrayList<String> tabeliNimed, ArrayList<String> veeruiNimed, String failiNimi){
             String csvFile = "metadata.csv";
 
 
@@ -21,24 +22,16 @@ public class KirjutaCSV {
 
 
                 // Kirjutame iga rea andmed CSV-faili (Tuleb Tsükkel)
-                System.out.println(veeruiNimed.size());
-                for(int i=0; i<veeruiNimed.size();i++){
-                    String tabel = tabeliNimed.get(i);
-                    String veerud = veeruiNimed.get(i);
-                    writer.append("..."+","+tabel+","+veerud+ ","+failiNimi+"\n");
-                }
-/*
-                for(String nimi : tabeliNimed) {
-                    writer.append(","+nimi+",\n");
-                }
-                for(String veerg : veeruiNimed){
-                    writer.append(","+veerg);
-                }
-                for(int i=0; i<tabeliNimed.size();i++){
-                    writer.append(","+failiNimi) ;
+
+                for(int i=0,j=0; i<väljundVeerg.size();i++) {
+
+                    String tabel = (i < tabeliNimed.size()) ? tabeliNimed.get(i) : " ";
+                    String veerud = (i < veeruiNimed.size()) ? veeruiNimed.get(i) : " ";
+                    String väljund = väljundVeerg.get(i);
+                    writer.append(väljund + ","+tabel+","+ veerud + "," +failiNimi+"\n");
 
                 }
-*/
+
                 // Sulgeme CSV-faili kirjutaja
                 writer.close();
 

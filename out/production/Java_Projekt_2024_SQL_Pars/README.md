@@ -1,4 +1,12 @@
-TODO
+# Eesmärk
+
+Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
+Äriloogika muutumisel või tabelite struktuuride ümberkujundamisel on mõnel juhul aeganõudev töö suuremate SQL päringute lahtiharutamine. \
+Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
+
+
+
+## Versioonid ja plaan
 
 1) Veergude eristamine
   -  Veerud on SELECT ja FROM-i vahel (Esimeses versioonis ei arvesta subselectiga enne FROM-e)  
@@ -11,12 +19,38 @@ TODO
 5) Randomi kasutamine (tagasta suvaline veerg?)
 
 
-
-
 V 0.1
   - Hardcodetud sisendiga
   - Praegune pakett loob isendeid klassi Veerg mis näitavad siis lihtsalt iga tagastatava veeru koodi eraldi.
   - On olemas nimekiri tabelitest ja kasutatud aliastest, neid peab nüüd võrdlema veergudega ja välja tooma kasutatud tabelid igas veerus.
+
+
+## Funktsionaalsuse kirjeldus 
+
+### Sisend:
+ - Veeru nimi ( sel 'a' , 'b' as c FROM dummy puhul saab mälu järgi esimene veerg nimeks a ja teise puhul c)
+ - Veeru number (ehk SELECT 'a' as a , 'b' as b FROM dummy puhul on a == 1 ja b == 2 )
+ - Tagasta suvaline ( rühmatöö näite nõue)
+ - Väljundi piiramine või modifitseerimine ( näiteks -tabel annab ainult kõik kasutatud tabelid, -veerg annab ainult kõik veerud)
+
+### Väljund:
+
+ #### Prindi kõik tabelid ja veerud mida kasutati
+  - Näiteks \
+  CASE WHEN o.orders_id then '1' \
+  when o.order_type = 'A' then '2' \
+  else oi.order_inventory_type end AS Order_Mapped
+  -  Võiks tagastada \
+  Kasutatud tabelid ja veerud: \
+  Orders , [orders_id, order_Type] \
+  Order_Inventory, [order_inventory_type] 
+
+#### Tekita metadata csv fail:
+  VäljundVeerg SisendTabel SisendVeerg Failinimi \
+  Order_Mapped Order, orders_id , sel.sql \
+  Order_Mapped ,Order, order_Type, sel.sql \
+  Order_Mapped, Order_Inventory , order_inventory_Type, sel.sql 
+
 
 
 

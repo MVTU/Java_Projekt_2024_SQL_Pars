@@ -1,6 +1,7 @@
 package main.java;
 import java.nio.channels.OverlappingFileLockException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -39,10 +40,10 @@ public class Main{
             String veeruKood = matcher.group(1);
             veeruKoodid.add(veeruKood);
         }
+        VäljundVeerg välVeerg = new VäljundVeerg();
+        List<String> väljundVeerg = välVeerg.test(failiNimi);
 
-
-
-        metadata.kirjuta(failiNimi, tabelNimed, veeruKoodid);
+        metadata.kirjuta(väljundVeerg, tabelNimed, veeruKoodid, failiNimi);
 
         scanner.close();
     }

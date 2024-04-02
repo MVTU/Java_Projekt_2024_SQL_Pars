@@ -12,7 +12,7 @@ public class Veerg {
         this.veeruKood = veeruKood;
     }
 
-    public void leiaSisendTabel(){
+    public ArrayList<Tabel> leiaSisendTabel(){
         String[] sõned = veeruKood.split(" ");
         for (int i = 0; i < sõned.length; i++) {
             String[] sõne = sõned[i].split("\\.");
@@ -23,7 +23,7 @@ public class Veerg {
             allikasTabelid.add(uus);
             }
         }
-
+        return  allikasTabelid;
         }
 
 
@@ -34,6 +34,7 @@ public class Veerg {
                 "veeruKood='" + veeruKood + '\'' +
                 ", allikasTabel='" + allikasTabelid + '\'' +
                 '}';
+
     }
 }
 
