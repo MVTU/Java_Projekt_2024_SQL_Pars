@@ -9,18 +9,49 @@ import java.util.regex.Pattern;
 public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Sisetsa SQL failinimi: ");
+        System.out.println("Sisesta SQL failinimi: ");
         String failiNimi = scanner.nextLine();
         KirjutaCSV metadata = new KirjutaCSV();
-       // System.out.println("Sisetsa tahetud veeru nimi: ");
-        //String väljundVeeruNimi = scanner.nextLine();
+        System.out.println("Sisesta tahetud veeru nimi või kõik: ");
+        String väljundVeeruNimi = scanner.nextLine();
 
         //Failid Essa = new Failid("SELECT.sql");
         Failid Essa = new Failid(failiNimi);
         String sisend1 = Essa.jaotaParing().leiaVeerud().toString();
         //System.out.println(Essa.jaotaParing().toString());
-        System.out.println(Essa.jaotaParing().leiaVeerud().toString());
-        System.out.println(Essa.jaotaParing().leiaSisend().toString());
+        //System.out.println(Essa.jaotaParing().leiaVeerud().toString());
+        //System.out.println(Essa.jaotaParing().leiaSisend().toString());
+        List<Veerg> newVeergList = new ArrayList<>();
+        List<Tabel> newTabelList = new ArrayList<>();
+        newVeergList = Essa.jaotaParing().leiaVeerud();
+        newTabelList = Essa.jaotaParing().leiaSisend();
+
+        for(Veerg v : newVeergList){
+            for (Tabel t: v.allikasTabelid){
+                for (Tabel tAlias : newTabelList){
+                    if (tAlias.tabelAlias.equalsIgnoreCase(t.tabelAlias)){
+                        t.tabeliNimi = tAlias.tabeliNimi;
+                        break;
+                    }
+                }
+            }
+        }
+
+
+
+        for(Veerg v : newVeergList) {
+            if (väljundVeeruNimi.equalsIgnoreCase("kõik")){
+                System.out.println(v.toString());
+            }
+            if (v.getNimi().equalsIgnoreCase(väljundVeeruNimi)){
+                System.out.println(v.toString());
+                break;
+            }
+
+
+        }
+
+
 
 
 

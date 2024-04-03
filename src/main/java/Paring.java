@@ -91,11 +91,11 @@ public class Paring {
                 if (from.equalsIgnoreCase(tükid[i])) {
                     tabel = tükid[i + 1];
                     alias = tükid[i + 2];
-                    tabelid.add(new Tabel(tabel,alias));
+                    tabelid.add(new Tabel(null,alias,tabel));
                 } else if (join.equalsIgnoreCase(tükid[i])) {
                     tabel = tükid[i + 1];
                     alias = tükid[i + 2];
-                    tabelid.add(new Tabel(tabel,alias));
+                    tabelid.add(new Tabel(null,alias,tabel));
                 }
 
         }

@@ -13,6 +13,30 @@ public class Veerg {
         this.veeruKood = veeruKood;
     }
 
+    public String getVeeruKood() {
+        return veeruKood;
+    }
+
+    public void setVeeruKood(String veeruKood) {
+        this.veeruKood = veeruKood;
+    }
+
+    public ArrayList<Tabel> getAllikasTabelid() {
+        return allikasTabelid;
+    }
+
+    public void setAllikasTabelid(ArrayList<Tabel> allikasTabelid) {
+        this.allikasTabelid = allikasTabelid;
+    }
+
+    public String getNimi() {
+        return nimi;
+    }
+
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
+    }
+
     public ArrayList<Tabel> leiaSisendTabel() {
         String[] sõned = veeruKood.split(" ");
         for (int i = 0; i < sõned.length; i++) {
@@ -28,7 +52,7 @@ public class Veerg {
                 }
 
                 String tabel = sõne[1];
-                Tabel uus = new Tabel(tabel, alias);
+                Tabel uus = new Tabel(tabel, alias,null);
                 allikasTabelid.add(uus);
                 if (1 == sõned.length) {
                     nimi = tabel;
