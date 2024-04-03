@@ -33,9 +33,9 @@ public class Failid{
                     fromOlemas = true;
                 }
                 if (fromOlemas) {
-                    sisend.append(line).append('\n');
+                    sisend.append(line).append(' ');
                 } else {
-                    valjund.append(line).append('\n');
+                    valjund.append(line).append(' ');
                 }
             }
 

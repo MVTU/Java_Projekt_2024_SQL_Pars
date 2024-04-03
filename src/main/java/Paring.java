@@ -40,9 +40,12 @@ public class Paring {
             //Otsi sulu algust, et mitte arvestada sealseid komasid
              if (suluAlgus.equals(String.valueOf(valjund.charAt(i)))) {
                     suluInd = true;
-
                     //Kui pole sulgude sees ja on näha koma siis arvesta veeruks
-                } else if (koma.equals(String.valueOf(valjund.charAt(i))) && !suluInd) {
+                }
+                else if  (suluLõpp.equals(String.valueOf(valjund.charAt(i)))) {
+                 suluInd = false;
+             }
+                else if (koma.equals(String.valueOf(valjund.charAt(i))) && !suluInd) {
                     reaLõpp = i;
 
                     // Eemalda select osa, eeldus on et sisseloetud valjund algab ilma tühikuteta
@@ -50,11 +53,18 @@ public class Paring {
                     if (selekt.equalsIgnoreCase(selectTükk[0])) {
                         reaAlgus = reaAlgus + 6;
                     }
-                    Veerg uusVeerg = new Veerg(valjund.substring(reaAlgus, reaLõpp));
+
+                    Veerg uusVeerg = new Veerg(valjund.substring(reaAlgus, reaLõpp).trim());
                     uusVeerg.leiaSisendTabel();
                     veerud.add(uusVeerg);
-                    reaAlgus = i;
+                    reaAlgus = i + 1;
                 }
+                else if (i == valjund.length() -1) {
+                    reaLõpp = i;
+                 Veerg uusVeerg = new Veerg(valjund.substring(reaAlgus, reaLõpp).trim());
+                 uusVeerg.leiaSisendTabel();
+                 veerud.add(uusVeerg);
+             }
 
         }
 

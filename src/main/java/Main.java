@@ -12,14 +12,20 @@ public class Main{
         System.out.println("Sisetsa SQL failinimi: ");
         String failiNimi = scanner.nextLine();
         KirjutaCSV metadata = new KirjutaCSV();
-
+       // System.out.println("Sisetsa tahetud veeru nimi: ");
+        //String väljundVeeruNimi = scanner.nextLine();
 
         //Failid Essa = new Failid("SELECT.sql");
         Failid Essa = new Failid(failiNimi);
         String sisend1 = Essa.jaotaParing().leiaVeerud().toString();
-        //ystem.out.println(Essa.jaotaParing().toString());
+        //System.out.println(Essa.jaotaParing().toString());
         System.out.println(Essa.jaotaParing().leiaVeerud().toString());
         System.out.println(Essa.jaotaParing().leiaSisend().toString());
+
+
+
+
+
 
         //Kirjutab metadata CSV faili
         Pattern patternTabel = Pattern.compile("tabelNimi='(.*?)'");
