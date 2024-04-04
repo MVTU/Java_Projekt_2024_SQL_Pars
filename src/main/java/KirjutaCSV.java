@@ -9,9 +9,8 @@ import java.util.List;
 
 public class KirjutaCSV {
 
-        public void kirjuta(List<String> väljundVeerg, ArrayList<String> tabeliNimed, ArrayList<String> veeruiNimed, String failiNimi){
+        public void kirjuta(List<String> väljundVeerg, ArrayList<String> sisendTabel, List<String> sisendVeerg, String failiNimi){
             String csvFile = "metadata.csv";
-
 
             try {
                 // Loome OutputStreamWriter objekti, määrates UTF-8 kodeeringu
@@ -23,11 +22,11 @@ public class KirjutaCSV {
 
                 // Kirjutame iga rea andmed CSV-faili (Tuleb Tsükkel)
 
-                for(int i=0,j=0; i<väljundVeerg.size();i++) {
+                for(int i=0; i<väljundVeerg.size();i++) {
 
-                    String tabel = (i < tabeliNimed.size()) ? tabeliNimed.get(i) : " ";
-                    String veerud = (i < veeruiNimed.size()) ? veeruiNimed.get(i) : " ";
-                    String väljund = väljundVeerg.get(i);
+                    String tabel = (i < sisendTabel.size()) ? sisendTabel.get(i) : " ";
+                    String veerud = (i < sisendVeerg.size()) ? sisendVeerg.get(i): " ";
+                    String väljund = (i < väljundVeerg.size() ? väljundVeerg.get(i): " ");
                     writer.append(väljund + ","+tabel+","+ veerud + "," +failiNimi+"\n");
 
                 }
