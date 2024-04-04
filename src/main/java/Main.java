@@ -40,7 +40,7 @@ public class Main{
 
 
         for(Veerg v : newVeergList) {
-            if (väljundVeeruNimi.equalsIgnoreCase("kõik")){
+            if (väljundVeeruNimi.equalsIgnoreCase("kõik") || väljundVeeruNimi.isEmpty()){
                 System.out.println(v.toString());
             }
             if (v.getNimi().equalsIgnoreCase(väljundVeeruNimi)){
