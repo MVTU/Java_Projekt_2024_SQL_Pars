@@ -19,9 +19,10 @@ Antud versioon ei tööta subquerydega.
 
 ## Töö kirjeldus
 
-Mattias lõi esimese versiooni mis võttis sisendi, lõi selle kaheks osaks seoses sellega kus FROM on ning lõi klassid mis andmed erinevatesse tüüpidesse jagas.
-Rando lõi faili lugemise ja kirjutamise osa.
+1) Mattias lõi esimese versiooni mis võttis sisendi, lõi selle kaheks osaks seoses sellega kus FROM on ning lõi klassid mis andmed erinevatesse tüüpidesse jagas.
+2) Rando lõi faili lugemise ja kirjutamise osa.
 
+Git sai kasutatud kui versioonide hoidjana kogu töö vältel.
 Peale esimese sisendi loomist oli tarvis seda paar korda üle teha ehk töö järgis seda malli korduvalt.
 
 Testimine käis vastavalt sisendfailile. Klasse kõigepealt lihtsalt kirjutas terminali ning lõpuks testisime vastavalt väljundfailile.
@@ -40,7 +41,7 @@ Mattias panustas umbeks kaks õhtupoolikut.
 
 
 
-### Versioonid ja plaan
+#### Versioonid ja plaan
 
 1) Veergude eristamine
   -  Veerud on SELECT ja FROM-i vahel (Esimeses versioonis ei arvesta subselectiga enne FROM-e)  
@@ -59,17 +60,17 @@ V 0.1
   - On olemas nimekiri tabelitest ja kasutatud aliastest, neid peab nüüd võrdlema veergudega ja välja tooma kasutatud tabelid igas veerus.
 
 
-## Funktsionaalsuse kirjeldus 
+#### Funktsionaalsuse kirjeldus 
 
-### Sisend:
+##### Sisend:
  - Veeru nimi ( sel 'a' , 'b' as c FROM dummy puhul saab mälu järgi esimene veerg nimeks a ja teise puhul c)
  - Veeru number (ehk SELECT 'a' as a , 'b' as b FROM dummy puhul on a == 1 ja b == 2 )
  - Tagasta suvaline ( rühmatöö näite nõue)
  - Väljundi piiramine või modifitseerimine ( näiteks -tabel annab ainult kõik kasutatud tabelid, -veerg annab ainult kõik veerud)
 
-### Väljund:
+##### Väljund:
 
- #### Prindi kõik tabelid ja veerud mida kasutati
+ ##### Prindi kõik tabelid ja veerud mida kasutati
   - Näiteks \
   CASE WHEN o.orders_id then '1' \
   when o.order_type = 'A' then '2' \
