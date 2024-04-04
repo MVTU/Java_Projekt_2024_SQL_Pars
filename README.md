@@ -1,3 +1,5 @@
+https://github.com/MVTU/Java_Projekt_2024_SQL_Pars.git
+
 # Eesmärk
 
 Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
