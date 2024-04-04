@@ -8,7 +8,7 @@ Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusa
 
 Anna programmile ette enda SQL fail, näiteks SELECT.sql \
 Kirjelda kas tahad ühte kindlat tagastusrida või kõiki. \
-Programm kirjutab nõutud väljendi metadata.csv faili töökausta.
+Programm kirjutab nõutud väljendi metadata.csv faili töökausta vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi
 
 ## Kirjeldus
 
