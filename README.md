@@ -62,7 +62,7 @@ Programmil peaks olema graafiline liides mis küsib faili nime  \
 Programm võiks ideaalis esitleda kõik saadaval olevad veerud \
 Kasutaja saab hiire või klaviatuuri abil veeru valida \
 Kui nimelist veerg mida kasutaja kirjeldab ei leitud, siis antakse teada \
-Samasuguse rea esitlemine oleks ideaal mingis textboxis \
+Eelmise versiooni stiilis rea esitlemine oleks ideaal mingis textboxis \
 Kui tarvis, siis saab lisada baasfunktsioone  SQL-i lugemiseks 
 
 
