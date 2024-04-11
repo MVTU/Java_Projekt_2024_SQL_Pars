@@ -58,10 +58,12 @@ Rando panustas kuskil 16 tundi.
 
 ##### Plaan edasiarenduseks
 
-Programmil peaks olema graafiline liides mis küsib faili nime ja siis veeru nime. \
-Kui nimelist veergu ei ole siis anna teada \
-Muidu võiks välja mõelda kuidas näeks kena välja sama andmestikku esitamine \
-Kui tarvis, siis võin lisada baasfunktsioone 
+Programmil peaks olema graafiline liides mis küsib faili nime  \
+Programm võiks ideaalis esitleda kõik saadaval olevad veerud \
+Kasutaja saab hiire või klaviatuuri abil veeru valida \
+Kui nimelist veerg mida kasutaja kirjeldab ei leitud, siis antakse teada \
+Samasuguse rea esitlemine oleks ideaal mingis textboxis \
+Kui tarvis, siis saab lisada baasfunktsioone  SQL-i lugemiseks 
 
 
 
