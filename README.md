@@ -5,7 +5,7 @@ https://github.com/MVTU/Java_Projekt_2024_SQL_Pars.git
 
 Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
 Äriloogika muutumisel või tabelite struktuuride ümberkujundamisel on mõnel juhul aeganõudev töö suuremate SQL päringute lahtiharutamine. \
-Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks.
+Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
 
 ## Kasutus
 
@@ -55,6 +55,14 @@ Rando panustas kuskil 16 tundi.
 3) Tabelite eristamine
 4) Kasutajalt sisendi küsimine (küsib näiteks faili nime või veergu?)
 5) Randomi kasutamine (tagasta suvaline veerg?)
+
+##### Plaan edasiarenduseks
+
+Programmil peaks olema graafiline liides mis küsib faili nime ja siis veeru nime. \
+Kui nimelist veergu ei ole siis anna teada \
+Muidu võiks välja mõelda kuidas näeks kena välja sama andmestikku esitamine \
+Kui tarvis, siis võin lisada baasfunktsioone 
+
 
 
 V 0.1
