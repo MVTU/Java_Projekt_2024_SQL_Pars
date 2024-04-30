@@ -16,7 +16,7 @@ Programm kirjutab nõutud väljendi metadata.csv faili töökausta vastavalt str
 ## Kirjeldus
 
 Antud esimene versioon on spetsialiseerunud ühele kindlale failitüübile ehk tavalisele selectile. Praegu oskab programm tegeleda näitena toodud failis oleva tüübiga : SELECT.sql \
-Programm eeldab, et on teada väljastatavad veergude nimed kui tahta ühe konkreetset rida. Kui on üks muutmata sisend siis võetakse veeru ninmi ning kui on kasutatud süntaksi AS nimi, siis tagastatakse nimi. \
+Programm eeldab, et on teada väljastatavad veergude nimed kui tahta ühe konkreetset rida. Kui on üks muutmata sisend siis võetakse veeru nimi ning kui on kasutatud süntaksi AS nimi, siis tagastatakse nimi. \
 Veergude eristamisel ei tohiks programmi häirida sulud, aga veergude eristamine toimub läbi komade leidmise. Veergude ajal on siis see funktsioon pausil. \
 Antud versioon ei tööta subquerydega.
 
