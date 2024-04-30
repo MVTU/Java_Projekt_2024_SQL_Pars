@@ -1,8 +1,9 @@
 VäljundVeerg,SisendTabel,SisendVeerg,Failinimi
-order_id, , ,SELECT.sql
-product_name, , ,SELECT.sql
-customer_name, , ,SELECT.sql
-quantity, , ,SELECT.sql
-quantity_category, , ,SELECT.sql
-product_type, , ,SELECT.sql
-adjusted_total, , ,SELECT.sql
+order_id,orders,order_id,SELECT.sql
+product_name,products,product_name,SELECT.sql
+customer_name,customers,customer_name,SELECT.sql
+quantity,order_items,quantity,SELECT.sql
+quantity_category,order_items,quantity,SELECT.sql
+quantity_category,rule_table,rule_value,SELECT.sql
+product_type,products,product_type,SELECT.sql
+adjusted_total,orders,order_total,SELECT.sql
