@@ -1,7 +1,7 @@
 package com.example.main;
 
 public class Tabel {
-    String veeruNimi;
+    private String veeruNimi;
     String tabelAlias;
     String tabeliNimi;
 

@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Paring {
 
-    public StringBuilder valjund;
-    public StringBuilder sisend;
+    private StringBuilder valjund;
+    private StringBuilder sisend;
 
     public Paring(StringBuilder valjund, StringBuilder sisend) {
         this.valjund = valjund;

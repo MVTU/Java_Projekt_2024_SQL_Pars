@@ -17,13 +17,14 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+import javafx.scene.input.KeyCode;
 import static java.awt.Color.RED;
 import static java.awt.SystemColor.text;
+
 public class Main extends Application {
     private Stage primaryStage;
     private Stage secondaryStage;
@@ -46,6 +47,11 @@ public class Main extends Application {
 
         Button submitButton1 = new Button("Kinnita"); //Nupp kirjutatud faili nime valimise jaoks | vea korral väljastab vea sõnumi.
         submitButton1.setOnAction(e -> handleSubmitButton1(viga)); //Vajutades realiseerib meetodi.
+        textField1.setOnKeyPressed(e ->{
+            if (e.getCode() == KeyCode.ENTER){
+        handleSubmitButton1(viga);
+            }
+                }); // Enterit vajutades realiseerib meetodi.
 
         Button submitButtonInfo = new Button("INFO");
         submitButtonInfo.setOnAction(e -> info());
@@ -55,7 +61,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 300, 150); // akna mõõtmed
         primaryStage.setScene(scene);
         primaryStage.setTitle("Failinime Sisestamine"); //akna nimi.
-        primaryStage.setResizable(false); //Akna suurst ei sa muuta.
+        primaryStage.setResizable(true); //Akna suurst ei sa muuta.
         primaryStage.show();
     }
 
@@ -133,7 +139,6 @@ public class Main extends Application {
             //Kirjutam CSV faili
             metadata.kirjuta(väljundVeerg, sisendTabel, sisendVeerg, failiNimi);
 
-            väljundVeerg.add("kõik"); // Lisab siia listi ka sõne "kõik", et pärast saaks valida rippmenüüst.
 
             //Loob teise akna, kus saab teha veeru valiku | näha ridu | avada loodud CSV faili.
             Stage secondaryStage = new Stage(); // Loo uus lava
@@ -145,7 +150,9 @@ public class Main extends Application {
             VBox root = new VBox(); //uus juur.
 
             ComboBox<String> rippMenüü = new ComboBox<>(); //Rippmenüü olemasolevate veergude valimiskes.
-            rippMenüü.getItems().addAll(väljundVeerg); //Lisab kõik valikud rippmenüüse.
+            Set<String> unikaalsus = new HashSet<>(väljundVeerg);
+            rippMenüü.getItems().addAll(unikaalsus); //Lisab kõik valikud rippmenüüse.
+            rippMenüü.getItems().add("kõik"); // Lisab siia listi ka sõne "kõik", et pärast saaks valida rippmenüüst.
             rippMenüü.setOnAction(e -> {
                 //Annab "valikud" väärtuseks valitud veeru rippmenüüst.
                 this.valikud = rippMenüü.getValue();
@@ -158,11 +165,11 @@ public class Main extends Application {
 
             root.getChildren().addAll(label2, rippMenüü,viga2, submitButton2, submitButton3, textiAla); //Paigaldab vajamineva aknasse.
 
-            Scene scene = new Scene(root, 500, 600); //Aken2 suuurus.
+            Scene scene = new Scene(root, 1000, 600); //Aken2 suuurus.
 
             secondaryStage.setScene(scene);
             secondaryStage.setTitle("Vali veerg");
-            secondaryStage.setResizable(false); //Akna suurust ei sa muuta.
+            secondaryStage.setResizable(true); //Akna suurust ei sa muuta.
 
             secondaryStage.show();
         }catch (FileNotFoundException e){
@@ -187,9 +194,10 @@ public class Main extends Application {
         for(Veerg v : newVeergList) {
             //Kui valitakse "kõik".
             if (väljundVeeruNimi.equalsIgnoreCase("kõik") || väljundVeeruNimi.isEmpty()){
-                //System.out.println(v.toString());
+                //System.out.printlnv(.toString());
                 koguTekst.append(v.toString()).append("\n");
                 textiAla.setText(koguTekst.toString());
+
             }
             //Kui valitakse ainult üks veerg.
             if (v.getNimi() != null && v.getNimi().equalsIgnoreCase(väljundVeeruNimi)){

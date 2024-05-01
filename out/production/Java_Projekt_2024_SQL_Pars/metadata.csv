@@ -1,8 +1,0 @@
-VäljundVeerg,SisendTabel,SisendVeerg,Failinimi
-order_id, , ,SELECT.sql
-product_name, , ,SELECT.sql
-customer_name, , ,SELECT.sql
-quantity, , ,SELECT.sql
-quantity_category, , ,SELECT.sql
-product_type, , ,SELECT.sql
-adjusted_total, , ,SELECT.sql

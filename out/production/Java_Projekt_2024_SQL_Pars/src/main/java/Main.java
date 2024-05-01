@@ -9,78 +9,88 @@ import java.util.regex.Pattern;
 public class Main{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
+        //Kasutaja Sisend
         System.out.println("Sisesta SQL failinimi: ");
         String failiNimi = scanner.nextLine();
-        KirjutaCSV metadata = new KirjutaCSV();
+
         System.out.println("Sisesta tahetud veeru nimi või kõik: ");
         String väljundVeeruNimi = scanner.nextLine();
 
-        //Failid Essa = new Failid("SELECT.sql");
         Failid Essa = new Failid(failiNimi);
-        String sisend1 = Essa.jaotaParing().leiaVeerud().toString();
-        //System.out.println(Essa.jaotaParing().toString());
-        //System.out.println(Essa.jaotaParing().leiaVeerud().toString());
-        //System.out.println(Essa.jaotaParing().leiaSisend().toString());
+        KirjutaCSV metadata = new KirjutaCSV();
+
         List<Veerg> newVeergList = new ArrayList<>();
         List<Tabel> newTabelList = new ArrayList<>();
+
         newVeergList = Essa.jaotaParing().leiaVeerud();
         newTabelList = Essa.jaotaParing().leiaSisend();
 
+        List<String> väljundVeerg = new ArrayList<>();
+        ArrayList<String> sisendTabel = new ArrayList<>();
+        ArrayList<String> sisendVeerg = new ArrayList<>();
+
         for(Veerg v : newVeergList){
+
+            //Mustri otsimine
+            Pattern patternTabel = Pattern.compile("väljundVeerg='(.*?)'");
+            Matcher matcherTabel = patternTabel.matcher(v.toString());
+
+
+            Pattern patternTabel1 = Pattern.compile("veeruNimi='(.*?)'");
+            Matcher matcherTabel1 = patternTabel1.matcher(v.toString());
+
+
+            //Lisab väljundVeeru andmed Listi
+            while (matcherTabel.find()) {
+                String nimi = matcherTabel.group(1);
+                väljundVeerg.add(nimi);
+                if (v.allikasTabelid.size() > 1){
+                    väljundVeerg.add(nimi.trim());
+                }
+            }
+            //Lisab sisendVeeru andmed Listi
+            while (matcherTabel1.find()) {
+                String nimi = matcherTabel1.group(1);
+                if (nimi.endsWith(",")) {
+                    nimi = nimi.substring(0, nimi.length() - 1);
+                    sisendVeerg.add(nimi.trim());
+                }
+                else
+                    sisendVeerg.add(nimi.trim());
+            }
             for (Tabel t: v.allikasTabelid){
                 for (Tabel tAlias : newTabelList){
                     if (tAlias.tabelAlias.equalsIgnoreCase(t.tabelAlias)){
                         t.tabeliNimi = tAlias.tabeliNimi;
+
+                        //Lisab sisendTabeli Listi
+                        sisendTabel.add(t.tabeliNimi.trim());
+
                         break;
                     }
                 }
             }
         }
 
-
+        //int taisJuhuarv = (int)Math.round(Math.random()*newVeergList.length()+ 0);
 
         for(Veerg v : newVeergList) {
             if (väljundVeeruNimi.equalsIgnoreCase("kõik") || väljundVeeruNimi.isEmpty()){
                 System.out.println(v.toString());
             }
+           /* if (väljundVeeruNimi.equalsIgnoreCase("suvaline"))
+            {
+
+            }*/
             if (v.getNimi().equalsIgnoreCase(väljundVeeruNimi)){
                 System.out.println(v.toString());
                 break;
             }
-
-
         }
 
-
-
-
-
-
-
-
-        //Kirjutab metadata CSV faili
-        Pattern patternTabel = Pattern.compile("tabelNimi='(.*?)'");
-        Matcher matcherTabel = patternTabel.matcher(Essa.jaotaParing().leiaSisend().toString());
-
-        Pattern pattern = Pattern.compile("tabelNimi='(.*?)'");
-        Matcher matcher = pattern.matcher(sisend1);
-        // alias = Pattern.compile("tabelAlia='(.*?)'");
-
-        ArrayList<String> tabelNimed = new ArrayList<>();
-        ArrayList<String> veeruKoodid = new ArrayList<>();
-        // Leidke iga ühilduvus ja lisage tabelNimi väärtus ArrayListi
-        while (matcherTabel.find()) {
-            String tabelNimi = matcherTabel.group(1);
-            tabelNimed.add(tabelNimi);
-        }
-        while (matcher.find()) {
-            String veeruKood = matcher.group(1);
-            veeruKoodid.add(veeruKood);
-        }
-        VäljundVeerg välVeerg = new VäljundVeerg();
-        List<String> väljundVeerg = välVeerg.test(failiNimi);
-
-        metadata.kirjuta(väljundVeerg, tabelNimed, veeruKoodid, failiNimi);
+        //Kirjutam CSV faili
+        metadata.kirjuta(väljundVeerg, sisendTabel, sisendVeerg, failiNimi);
 
         scanner.close();
     }
