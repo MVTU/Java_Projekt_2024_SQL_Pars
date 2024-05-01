@@ -30,6 +30,7 @@ public class Main extends Application {
     private Stage secondaryStage;
 
     private TextField textField1;
+    private TextField textField2;
 
     private List<Veerg> newVeergList;
     private String valikud;
@@ -41,9 +42,11 @@ public class Main extends Application {
 
         //Esimene aken ("Sisesta failinimi")
 
-        Label label1 = new Label("Sisesta failinimi:"); //faili sisestus küsimus.
+        Label label1 = new Label("Sisesta avatava faili nimi:"); //faili sisestus küsimus.
+        Label uusFail = new Label("Muuda loodava faili nimi: ");
         Label viga = new Label(""); //Hetkel tühi sõne vea jaoks.
-        textField1 = new TextField(); // Texti ala failinimie sisestamise jaoks.
+        textField1 = new TextField(); // Texti ala vaadatava faili sisestamise jaoks.
+        textField2 = new TextField(); // Texti ala uue nime  sisestamise jaoks.
 
         Button submitButton1 = new Button("Kinnita"); //Nupp kirjutatud faili nime valimise jaoks | vea korral väljastab vea sõnumi.
         submitButton1.setOnAction(e -> handleSubmitButton1(viga)); //Vajutades realiseerib meetodi.
@@ -56,7 +59,7 @@ public class Main extends Application {
         Button submitButtonInfo = new Button("INFO");
         submitButtonInfo.setOnAction(e -> info());
         VBox root = new VBox(); //GUI juur
-        root.getChildren().addAll(label1, textField1,submitButton1, viga, submitButtonInfo); //Lisab väljad aknasse
+        root.getChildren().addAll(label1,  textField1,submitButton1, viga, uusFail, textField2, submitButtonInfo); //Lisab väljad aknasse
 
         Scene scene = new Scene(root, 300, 150); // akna mõõtmed
         primaryStage.setScene(scene);
@@ -68,6 +71,7 @@ public class Main extends Application {
     private void handleSubmitButton1(Label viga) {
         //Kui vajutada "Kinnita" nupp failinime sisestamisel.
         String failiNimi = textField1.getText(); //Annab muutujale "failiNimi" väärtuseks sisestatud failinime.
+        String uusF = textField2.getText(); //Annab muutujale "uusF" väärtuseks sisestatud failinime.
         Stage stage1 = (Stage) textField1.getScene().getWindow();
         File fail = new File(failiNimi); //muutja "fail" - kontrollida, kas leidub sisestatud fail.
 
@@ -137,7 +141,7 @@ public class Main extends Application {
             }
 
             //Kirjutam CSV faili
-            metadata.kirjuta(väljundVeerg, sisendTabel, sisendVeerg, failiNimi);
+            metadata.kirjuta(väljundVeerg, sisendTabel, sisendVeerg, failiNimi, uusF);
 
 
             //Loob teise akna, kus saab teha veeru valiku | näha ridu | avada loodud CSV faili.
@@ -161,7 +165,8 @@ public class Main extends Application {
             Button submitButton2 = new Button("Vali"); //Nupp, et väljastada valitud veeru read ekraanile.
             submitButton2.setOnAction(e -> handleSubmitButton2(textiAla, viga2)); //Nuppu vajutamisel realiseerib meetodi.
             Button submitButton3 = new Button("Ava loodud CSV fail"); //Nupp loodud CSV faili avamiseks.
-            submitButton3.setOnAction(e -> openFile()); //Nuppu vajutamisel realiseerib meetodi.
+            submitButton3.setOnAction(e -> openFile(uusF)); //Nuppu vajutamisel realiseerib meetodi.
+
 
             root.getChildren().addAll(label2, rippMenüü,viga2, submitButton2, submitButton3, textiAla); //Paigaldab vajamineva aknasse.
 
@@ -215,10 +220,17 @@ public class Main extends Application {
 
         }
     }
-    public void openFile(){
+    public void openFile(String uusFail){
         //Meetod CSV faili avamiseks.
         //Kui vajutatakse nuppu "Ava loodud CSV fail".
-        String filePath = "metadata.csv";
+        String filePath;
+        if (uusFail == null || uusFail.trim().isEmpty()) {
+            filePath = "metadata.csv";
+
+            } else {
+            filePath = uusFail + ".csv";
+            }
+
         try {
             File file = new File(filePath);
             Desktop.getDesktop().open(file);
