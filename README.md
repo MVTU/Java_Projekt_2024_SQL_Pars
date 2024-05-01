@@ -48,8 +48,11 @@ Oleks pidanud rohkem mõtlema eestikeelsete väljendite peale, antud klassikirje
 Oleks võinud ka rohkem kokku mängida arendust, enamus tööd sai vist tehtud eraldi.
 Valmis töö vastab esimesele visioonile, aga eks kasutamiseks oleks antud programmiga omajagu rohkem aega tegeleda. Praegune töö sai tehtud näite pealt, aga oleks tarvis kirjeldada ka kõik tahetud SQL-i tüübid mida kasutada.
 
-Mattias panustas umbeks kaks õhtupoolikut.
-Rando panustas kuskil 16 tundi. 
+Mattias panustas umbeks kaks õhtupoolikut. \
+Rando panustas kuskil 16 tundi. \
+
+Versioon kahel panustas Mattias õhtupooliku. \
+Rando 
 
 
 
