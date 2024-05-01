@@ -1,7 +1,11 @@
 # Link gitile:
-https://github.com/MVTU/Java_Projekt_2024_SQL_Pars.git
-Versioon 2 main asukoht: src/main/java/com/example/main/Main.java
+
+https://github.com/MVTU/Java_Projekt_2024_SQL_Pars.git \
+
+Versioon 2 main asukoht: src/main/java/com/example/main/Main.java \ 
+
 Vana versioon talletatud kausta V1: src/main/java/V1/Main.java
+
 # Eesmärk
 
 Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
