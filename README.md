@@ -10,13 +10,15 @@ Vana versioon talletatud kausta V1: src/main/java/V1/Main.java
 
 Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
 Äriloogika muutumisel või tabelite struktuuride ümberkujundamisel on mõnel juhul aeganõudev töö suuremate SQL päringute lahtiharutamine. \
-Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
+Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. \
+Graafiline kasutajaliides võimaldab kasutajal valida uue faili nime ning hõlpsustab andmete vaatamist. \
+Kasutajaliides pakub teavet omaenda funktsionaalsuse kohta. 
 
 ## Kasutus
 
 Anna programmile ette enda SQL fail, näiteks SELECT.sql \
 Kirjelda kas tahad ühte kindlat tagastusrida või kõiki. \
-Programm kirjutab nõutud väljendi metadata.csv faili töökausta vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi
+Programm kirjutab nõutud väljendi metadata.csv või enda poolt nimetatud faili töökausta vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi
 
 ## Kirjeldus
 
@@ -34,6 +36,10 @@ Git sai kasutatud kui versioonide hoidjana kogu töö vältel.
 Peale esimese sisendi loomist oli tarvis seda paar korda üle teha ehk töö järgis seda malli korduvalt.
 
 Testimine käis vastavalt sisendfailile. Klasse kõigepealt lihtsalt kirjutas terminali ning lõpuks testisime vastavalt väljundfailile.
+
+Versioon 2
+1) Rando 
+2) Mattias lisas võimaluse kasutada klaviatuuri esialgsete andmete sisestamiseks, akna suurendamiseks ning lõppfaili nime muutmiseks.
 
 ## Probleemid ja kommentaarid
 
