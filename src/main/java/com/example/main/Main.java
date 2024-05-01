@@ -245,7 +245,7 @@ public class Main extends Application {
         //Väljastatav info tekst.
         String tekst = "Anna programmile ette enda SQL fail, näiteks SELECT.sql\n" +
                 "Kirjelda kas tahad ühte kindlat tagastusrida või kõiki.\n" +
-                "Programm kirjutab nõutud väljendi metadata.csv faili töökausta \n" +
+                "Programm kirjutab nõutud väljendi metadata.csv või kasutaja nimega valitud csv faili töökausta \n" +
                 "vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi";
 
         Label infoTekst = new Label(tekst);
