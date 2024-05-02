@@ -38,7 +38,7 @@ Peale esimese sisendi loomist oli tarvis seda paar korda üle teha ehk töö jä
 Testimine käis vastavalt sisendfailile. Klasse kõigepealt lihtsalt kirjutas terminali ning lõpuks testisime vastavalt väljundfailile.
 
 Versioon 2
-1) Rando 
+1) Rando lisas graafilise osa, kus saab kasutaja kuvada infot, sisestada failinime, valida veeru rippmenüüst ja näha väljastavaid ridu ning nupu, mis avab loodud CSV faili. Samuti vea teated vigade korral.
 2) Mattias lisas võimaluse kasutada klaviatuuri esialgsete andmete sisestamiseks, akna suurendamiseks ning lõppfaili nime muutmiseks.
 
 ## Probleemid ja kommentaarid
@@ -52,7 +52,7 @@ Mattias panustas umbeks kaks õhtupoolikut. \
 Rando panustas kuskil 16 tundi. 
 
 Versioon kahel panustas Mattias õhtupooliku. \
-Rando 
+Rando panustas kuskil 6-8h.
 
 
 
