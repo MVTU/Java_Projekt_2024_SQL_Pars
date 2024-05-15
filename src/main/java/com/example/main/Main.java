@@ -43,7 +43,7 @@ public class Main extends Application {
         //Esimene aken ("Sisesta failinimi")
 
         Label label1 = new Label("Sisesta avatava faili nimi:"); //faili sisestus küsimus.
-        Label uusFail = new Label("Muuda loodava faili nimi: ");
+        Label uusFail = new Label("Vali loodava faili nimi: ");
         Label viga = new Label(""); //Hetkel tühi sõne vea jaoks.
         textField1 = new TextField(); // Texti ala vaadatava faili sisestamise jaoks.
         textField2 = new TextField(); // Texti ala uue nime  sisestamise jaoks.
@@ -64,7 +64,7 @@ public class Main extends Application {
         Scene scene = new Scene(root, 300, 150); // akna mõõtmed
         primaryStage.setScene(scene);
         primaryStage.setTitle("Failinime Sisestamine"); //akna nimi.
-        primaryStage.setResizable(true); //Akna suurst ei sa muuta.
+        primaryStage.setResizable(false); //Akna suurst ei sa muuta.
         primaryStage.show();
     }
 
@@ -174,7 +174,7 @@ public class Main extends Application {
 
             secondaryStage.setScene(scene);
             secondaryStage.setTitle("Vali veerg");
-            secondaryStage.setResizable(true); //Akna suurust ei sa muuta.
+            secondaryStage.setResizable(false); //Akna suurust ei sa muuta.
 
             secondaryStage.show();
         }catch (FileNotFoundException e){

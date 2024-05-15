@@ -12,48 +12,56 @@ public class KirjutaCSV {
         public void kirjuta(List<String> väljundVeerg, ArrayList<String> sisendTabel, List<String> sisendVeerg, String failiNimi){
             String csvFile = "metadata.csv";
 
-            try {
+            try (Writer writer = new OutputStreamWriter(new FileOutputStream(csvFile), "UTF-8") ) {
                 // Loome OutputStreamWriter objekti, määrates UTF-8 kodeeringu
-                Writer writer = new OutputStreamWriter(new FileOutputStream(csvFile), "UTF-8");
 
-                // Kirjutame pealkirjarida
+
+                    // Kirjutame pealkirjarida
                 writer.append("VäljundVeerg,SisendTabel,SisendVeerg,Failinimi\n");// sisu on ajutine test.
 
 
-                // Kirjutame iga rea andmed CSV-faili (Tuleb Tsükkel)
+                    // Kirjutame iga rea andmed CSV-faili (Tuleb Tsükkel)
 
-                for(int i=0; i<väljundVeerg.size();i++) {
+                for(
+                    int i = 0; i<väljundVeerg.size();i++)
 
-                    String tabel = (i < sisendTabel.size()) ? sisendTabel.get(i) : " ";
-                    String veerud = (i < sisendVeerg.size()) ? sisendVeerg.get(i): " ";
-                    String väljund = (i < väljundVeerg.size() ? väljundVeerg.get(i): " ");
-                    writer.append(väljund + ","+tabel+","+ veerud + "," +failiNimi+"\n");
+                    {
 
-                }
+                        String tabel = (i < sisendTabel.size()) ? sisendTabel.get(i) : " ";
+                        String veerud = (i < sisendVeerg.size()) ? sisendVeerg.get(i) : " ";
+                        String väljund = (i < väljundVeerg.size() ? väljundVeerg.get(i) : " ");
+                        writer.append(väljund + "," + tabel + "," + veerud + "," + failiNimi + "\n");
 
-                // Sulgeme CSV-faili kirjutaja
+                    }
+
+                    // Sulgeme CSV-faili kirjutaja
                 writer.close();
 
-                System.out.println("CSV-fail " + csvFile + " on edukalt loodud!");
-            } catch (
-                    IOException e) {
-                e.printStackTrace();
-        }
+                System.out.println("CSV-fail "+csvFile +" on edukalt loodud!");
+                } catch(
+                        IOException e){
+                throw new RuntimeException("Faili ei suudetud luua", e);
+
+            }
+
     }
     public void kirjuta(List<String> väljundVeerg, ArrayList<String> sisendTabel, List<String> sisendVeerg, String failiNimi, String uusFail){
 
         // Määra uus fail kui anti sisend
-        String csvFile;
-        try {
-            // Loome OutputStreamWriter objekti, määrates UTF-8 kodeeringu
-            if (uusFail == null || uusFail.trim().isEmpty()) {
-                csvFile = "metadata.csv";
-            }
-            else {
 
-                csvFile = uusFail + ".csv";
-            }
-            Writer writer = new OutputStreamWriter(new FileOutputStream(csvFile), "UTF-8");
+
+        String csvFile;
+        if (uusFail == null || uusFail.trim().isEmpty()) {
+            csvFile = "metadata.csv";
+        }
+        else {
+
+            csvFile = uusFail + ".csv";
+        }
+        try (Writer writer = new OutputStreamWriter(new FileOutputStream(csvFile), "UTF-8")){
+            // Loome OutputStreamWriter objekti, määrates UTF-8 kodeeringu
+
+
 
             // Kirjutame pealkirjarida
             writer.append("VäljundVeerg,SisendTabel,SisendVeerg,Failinimi\n");// sisu on ajutine test.
@@ -76,7 +84,7 @@ public class KirjutaCSV {
             System.out.println("CSV-fail " + csvFile + " on edukalt loodud!");
         } catch (
                 IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException("Faili ei suudetud luua", e);
         }
     }
 
