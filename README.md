@@ -10,13 +10,15 @@ Vana versioon talletatud kausta V1: src/main/java/V1/Main.java
 
 Antud projekti eesmärgiks on lihtsustada andmebaaside ja andmeaitade haldamise tööd. \
 Äriloogika muutumisel või tabelite struktuuride ümberkujundamisel on mõnel juhul aeganõudev töö suuremate SQL päringute lahtiharutamine. \
-Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. 
+Antud programm aitab luua selgust veergude tekitamisel kasutatud täpseid  alusandmeid ning võimaldab tekitada ka metaandmeid edasiseks kasutamiseks. \
+Graafiline kasutajaliides võimaldab kasutajal valida uue faili nime ning hõlpsustab andmete vaatamist. \
+Kasutajaliides pakub teavet omaenda funktsionaalsuse kohta. 
 
 ## Kasutus
 
 Anna programmile ette enda SQL fail, näiteks SELECT.sql \
 Kirjelda kas tahad ühte kindlat tagastusrida või kõiki. \
-Programm kirjutab nõutud väljendi metadata.csv faili töökausta vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi
+Programm kirjutab nõutud väljendi metadata.csv või enda poolt nimetatud faili töökausta vastavalt struktuurile VäljundVeerg, Sisendtabel,Sisendveerg,Failinimi
 
 ## Kirjeldus
 
@@ -35,6 +37,10 @@ Peale esimese sisendi loomist oli tarvis seda paar korda üle teha ehk töö jä
 
 Testimine käis vastavalt sisendfailile. Klasse kõigepealt lihtsalt kirjutas terminali ning lõpuks testisime vastavalt väljundfailile.
 
+Versioon 2
+1) Rando lisas graafilise osa, kus saab kasutaja kuvada infot, sisestada failinime, valida veeru rippmenüüst ja näha väljastavaid ridu ning nupu, mis avab loodud CSV faili. Samuti vea teated vigade korral.
+2) Mattias lisas võimaluse kasutada klaviatuuri esialgsete andmete sisestamiseks, akna suurendamiseks ning lõppfaili nime muutmiseks.
+
 ## Probleemid ja kommentaarid
 
 Algselt oleks võinud võtta konkreetsemad nõuded enda projektile, sai proovitud agiilselt arendada ehk kui esimene osa töötas siis sai lisatud kohe uus funktsioon.
@@ -42,8 +48,11 @@ Oleks pidanud rohkem mõtlema eestikeelsete väljendite peale, antud klassikirje
 Oleks võinud ka rohkem kokku mängida arendust, enamus tööd sai vist tehtud eraldi.
 Valmis töö vastab esimesele visioonile, aga eks kasutamiseks oleks antud programmiga omajagu rohkem aega tegeleda. Praegune töö sai tehtud näite pealt, aga oleks tarvis kirjeldada ka kõik tahetud SQL-i tüübid mida kasutada.
 
-Mattias panustas umbeks kaks õhtupoolikut.
+Mattias panustas umbeks kaks õhtupoolikut. \
 Rando panustas kuskil 16 tundi. 
+
+Versioon kahel panustas Mattias õhtupooliku. \
+Rando panustas kuskil 6-8h.
 
 
 
