@@ -170,11 +170,12 @@ public class Main extends Application {
 
             root.getChildren().addAll(label2, rippMenüü,viga2, submitButton2, submitButton3, textiAla); //Paigaldab vajamineva aknasse.
 
-            Scene scene = new Scene(root, 1000, 600); //Aken2 suuurus.
+            Scene scene = new Scene(root, 1500, 400); //Aken2 suuurus.
 
             secondaryStage.setScene(scene);
             secondaryStage.setTitle("Vali veerg");
             secondaryStage.setResizable(false); //Akna suurust ei sa muuta.
+
 
             secondaryStage.show();
         }catch (FileNotFoundException e){
