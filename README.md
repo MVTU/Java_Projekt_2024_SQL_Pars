@@ -51,7 +51,7 @@ Valmis töö vastab esimesele visioonile, aga eks kasutamiseks oleks antud progr
 Mattias panustas umbeks kaks õhtupoolikut. \
 Rando panustas kuskil 16 tundi. 
 
-Versioon kahel panustas Mattias kaks õhtupooliku. \
+Versioon kahel panustas Mattias 2 õhtupoolikut. \
 Rando panustas kuskil 6-8h.
 
 
